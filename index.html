@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>Chat App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<div class="chatApp">
+    <div class="onlineUserPanel">
+        <h2 class="userPanelHeading">Online Users:</h2>
+        <ul id="users"></ul>
+    </div>
+    <div class="messagePanel">
+        <div class="messageBoard">
+            <ul id="messages"></ul>
+        </div>
+        <div class="formSection">
+            <form action="">
+                <input id="m" autocomplete="off" /><button>Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
