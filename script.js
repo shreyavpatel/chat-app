@@ -1,7 +1,6 @@
 $(function () {
     var socket = io();
     var clientUsername = "";
-    var clientColor = "";
 
     $('form').submit(function(e){
         e.preventDefault(); // prevents page reloading
@@ -38,8 +37,7 @@ $(function () {
     socket.on('user connected', function(msg){
         clientUsername = msg.userName;
         document.cookie = "user="+ clientUsername +"; max-age=3600";
-        clientColor = msg.userColour;
-        document.cookie = "userColour="+ clientColor +"; max-age=3600";
+        document.cookie = "userColour="+ msg.userColour +"; max-age=3600";
 
         msg.messages.forEach(function (value){
             if (value.userName !== clientUsername){
@@ -143,7 +141,6 @@ $(function () {
     });
 
     socket.on('user color update', function(msg){
-        clientColor = msg.newUserColour;
-        document.cookie = "userColour="+ clientColor +"; max-age=3600";
+        document.cookie = "userColour="+ msg.newUserColour +"; max-age=3600";
     });
 });
